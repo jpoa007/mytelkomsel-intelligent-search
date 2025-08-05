@@ -4,7 +4,6 @@ import "./App.css";
 function App() {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
-    const [message, setMessage] = useState(""); // Add this line
     const [sortBy, setSortBy] = useState("similarity");
     const [order, setOrder] = useState("desc");
 
@@ -23,17 +22,14 @@ function App() {
             const response = await fetch(`${import.meta.env.VITE_API_URL}/api/llm-search?${params}`);
             const data = await response.json();
 
-            if (data.results && data.results.length > 0) {
+            if (data.results) {
                 setResults(data.results);
-                setMessage(""); // Clear message when results found
             } else {
                 setResults([]);
-                setMessage(data.response || "No results found."); // Show response message
             }
         } catch (error) {
             console.error("Search error:", error);
             setResults([]);
-            setMessage("Search error occurred.");
         }
     };
 
@@ -64,13 +60,6 @@ function App() {
 
                 <button onClick={handleSearch}>Search</button>
             </div>
-
-            {/* Add this message display */}
-            {message && (
-                <div className="message" style={{ padding: "20px", textAlign: "center", fontStyle: "italic" }}>
-                    {message}
-                </div>
-            )}
 
             <div className="results">
                 {results.map((item, index) => (
