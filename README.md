@@ -1,46 +1,27 @@
+# MyTelkomsel Intelligent Search
 
----
+This project is a semantic product search engine built for the MyTelkomsel ecosystem. It combines traditional fuzzy search with modern LLM-powered semantic search using OpenAI embeddings and ChromaDB, allowing users to query products in natural language and receive relevant product matches ranked by meaning and relevance.
 
-## 🧪 Modules
+![Telkomsel Logo](http://127.0.0.1:8000/images/telkomsel.png)
 
-Each search feature is developed independently as a module:
+## 🔍 Features
 
-| Module                     | Status   | Description                          |
-|----------------------------|----------|--------------------------------------|
-| `fuzzy-search`             | ✅ WIP    | Typo-tolerant keyword search         |
-| `semantic-search`          | ⏳        | Vector-based intent matching         |
-| `auto-suggestion`          | ⏳        | Smart real-time suggestions          |
-| `real-time-recommendations`| ⏳        | Contextual suggestions (soon)        |
-| `personalized-search`      | ⏳        | Reranking based on user behavior     |
+- **Fuzzy Search**: Matches product names with user queries using approximate string matching.
+- **LLM-Based Semantic Search**: Leverages OpenAI embeddings to find semantically relevant products.
+- **ChromaDB Vector Store**: Stores and queries embeddings efficiently.
+- **FastAPI Backend**: Provides API endpoints for fuzzy, vector, and LLM-based search.
+- **React Frontend**: Clean UI for search input and result display.
+- **Filtering**: Users can filter results by semantic relevance score and price (asc/desc).
 
----
+## 🧠 Tech Stack
 
-## 🚀 Deployment Plan
+| Layer     | Technology               |
+|----------|--------------------------|
+| Frontend | React.js + Vite          |
+| Backend  | FastAPI                  |
+| ML       | OpenAI Embeddings        |
+| VectorDB | ChromaDB                 |
+| Language | Python, JavaScript       |
 
-| Part      | Platform    | URL (sample)                                  |
-|-----------|-------------|-----------------------------------------------|
-| Frontend  | [Vercel](https://vercel.com)       | `https://search-demo.vercel.app`      |
-| Backend   | [Railway](https://railway.app)     | `https://search-api.up.railway.app`   |
-| GitHub    | Private Repo | [GitHub](https://github.com/jpoa007/mytelkomsel-intelligent-search) |
+## 📂 Project Structure
 
----
-
-## 🧪 Testing Strategy
-
-| Layer     | Tool        | Location                     |
-|-----------|-------------|------------------------------|
-| Backend   | `pytest`    | `backend/tests/test_*.py`    |
-| Frontend  | `Playwright`| `frontend/tests/`            |
-| API       | `Postman` / `pytest` | Endpoint coverage     |
-
----
-
-## 🔐 Privacy
-
-This is a **private, internal PoC** for Telkomsel. No sensitive production data is stored or exposed.
-
----
-
-## 📎 License
-
-© Telkomsel, 2024. All rights reserved.
