@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+.env
+
+# Virtual Environment
+.venv/
+env/
+venv/
+
+# Node
+node_modules/
+dist/
+build/
+*.log
+
+# OS & Editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+*.bak
