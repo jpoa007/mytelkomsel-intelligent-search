@@ -10,7 +10,11 @@ app = FastAPI()
 # ✅ Allow CORS for frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",  # Local development
+        "https://mytelkomsel-frontend-production.up.railway.app",  # Your frontend
+        "https://mytelkomsel-backend-production.up.railway.app",  # Your backend
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
